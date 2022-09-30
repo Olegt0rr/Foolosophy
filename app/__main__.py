@@ -1,6 +1,6 @@
 import logging
 
-from .table import Table
+from .tables import Table
 
 logging.basicConfig(
     level=logging.INFO,

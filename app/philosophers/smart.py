@@ -14,10 +14,13 @@ class SmartPhilosopher(BasePhilosopher):
     def process(self) -> None:
         """Start dine."""
         logger.info("%r join the table", self)
-        while True:
+
+        while self.is_hungry:
             self._get_both_forks()
             self._eat()
             self._return_both_forks()
+
+        logger.info("%r left the table", self)
 
     def _get_both_forks(self):
         """Took both forks from the table."""

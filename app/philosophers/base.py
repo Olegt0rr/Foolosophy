@@ -26,6 +26,7 @@ class BasePhilosopher(Thread, ABC):
             Side.LEFT: left_fork,
             Side.RIGHT: right_fork,
         }
+        self.is_hungry: bool = True
 
     @abstractmethod
     def process(self):

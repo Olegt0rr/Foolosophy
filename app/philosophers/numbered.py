@@ -10,15 +10,13 @@ class PhilosopherWithNumberedForks(Philosopher):
 
     def process(self) -> None:
         """Start dine."""
-
         logger.info("%r join the table", self)
-
         sides_ordered = [
             side
             for side, fork in sorted(self.forks.items(), key=lambda item: item[1].id)
         ]
 
-        while True:
+        while self.is_hungry:
             for side in sides_ordered:
                 self._get_fork(side)
 
@@ -26,3 +24,5 @@ class PhilosopherWithNumberedForks(Philosopher):
 
             for side in sides_ordered:
                 self._return_fork(side)
+
+        logger.info("%r left the table", self)

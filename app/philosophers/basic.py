@@ -15,12 +15,14 @@ class Philosopher(BasePhilosopher):
         """Start dine."""
         logger.info("%r join the table", self)
 
-        while True:
+        while self.is_hungry:
             self._get_fork(Side.LEFT)
             self._get_fork(Side.RIGHT)
             self._eat()
             self._return_fork(Side.RIGHT)
             self._return_fork(Side.LEFT)
+
+        logger.info("%r left the table", self)
 
     def _get_fork(self, side: Side) -> None:
         """Get fork from side."""

@@ -6,6 +6,7 @@ __all__ = [
     "SmartPhilosopher",
 ]
 
+import signal
 from threading import Semaphore
 from typing import List
 
@@ -36,6 +37,16 @@ class Table:
         self.seat_philosophers()
         for philosopher in self.philosophers:
             philosopher.start()
+
+        try:
+            signal.pause()
+
+        except (KeyboardInterrupt, SystemExit):
+            for philosopher in self.philosophers:
+                philosopher.is_hungry = False
+
+            for philosopher in self.philosophers:
+                philosopher.join()
 
     def seat_philosophers(self) -> None:
         """Seat philosophers to their seats."""
