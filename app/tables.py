@@ -53,7 +53,6 @@ class Table:
         self.philosophers = [
             PhilosopherWithNumberedForks(
                 name=str(i),
-                seat_id=i,
                 left_fork=self.forks[i],
                 right_fork=self.forks[(i + 1) % self.seats],
             )
@@ -70,7 +69,6 @@ class TableWithWaiter(Table):
         self.philosophers = [
             PhilosopherWithWaiter(
                 name=str(i),
-                seat_id=i,
                 left_fork=self.forks[i],
                 right_fork=self.forks[(i + 1) % self.seats],
                 waiter=waiter,

@@ -12,14 +12,12 @@ class PhilosopherWithWaiter(Philosopher):
     def __init__(
         self,
         name: str,
-        seat_id: int,
         left_fork: Fork,
         right_fork: Fork,
         waiter: Semaphore,
     ):
         super().__init__(
             name=name,
-            seat_id=seat_id,
             left_fork=left_fork,
             right_fork=right_fork,
         )

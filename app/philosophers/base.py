@@ -16,12 +16,10 @@ class BasePhilosopher(Thread, ABC):
     def __init__(
         self,
         name: str,
-        seat_id: int,
         left_fork: Fork,
         right_fork: Fork,
     ):
         super().__init__(name=name, target=self.process)
-        self.seat_id = seat_id
         self.forks: dict[Side, Fork] = {
             Side.LEFT: left_fork,
             Side.RIGHT: right_fork,
