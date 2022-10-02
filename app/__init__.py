@@ -17,9 +17,9 @@ from .tables import (
 )
 
 
-def start_dinner(table_class: Type[Table]):
-    """Start the dinner"""
-    table = Table(seats=5)
+def start_dinner(table_class: Type[Table]) -> None:
+    """Start the dinner."""
+    table = table_class(seats=5)
     table.seat_philosophers()
 
     for philosopher in table.philosophers:
@@ -28,7 +28,7 @@ def start_dinner(table_class: Type[Table]):
     _shutdown(table)
 
 
-def _shutdown(table: Table):
+def _shutdown(table: Table) -> None:
     """Wait for graceful shutdown (Ctrl+C)."""
     try:
         signal.pause()
