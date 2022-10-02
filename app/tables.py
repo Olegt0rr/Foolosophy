@@ -1,12 +1,14 @@
 __all__ = [
     "Table",
+    "TableWithNumberedForks",
+    "TableWithSmartPhilosophers",
+    "TableWithWaiter",
     "Philosopher",
     "PhilosopherWithNumberedForks",
-    "PhilosopherWithWaiter",
     "SmartPhilosopher",
+    "PhilosopherWithWaiter",
 ]
 
-import signal
 from threading import Semaphore
 from typing import List, Type
 
@@ -39,22 +41,6 @@ class Table:
         self.seats = seats
         self.forks = [Fork(i) for i in range(seats)]
         self.philosophers: List[AbstractPhilosopher] = []
-
-    def start(self) -> None:
-        """Start dinner."""
-        self.seat_philosophers()
-        for philosopher in self.philosophers:
-            philosopher.start()
-
-        try:
-            signal.pause()
-
-        except (KeyboardInterrupt, SystemExit):
-            for philosopher in self.philosophers:
-                philosopher.is_hungry = False
-
-            for philosopher in self.philosophers:
-                philosopher.join()
 
     def seat_philosophers(self) -> None:
         """Seat philosophers to their seats."""
