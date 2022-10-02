@@ -10,7 +10,7 @@ from ..forks import Fork
 logger = logging.getLogger(__name__)
 
 
-class BasePhilosopher(Thread, ABC):
+class AbstractPhilosopher(Thread, ABC):
     """Abstract thinker man."""
 
     def __init__(

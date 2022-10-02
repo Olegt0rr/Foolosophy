@@ -2,7 +2,7 @@ import logging
 import random
 import time
 
-from .base import BasePhilosopher
+from .abstract import AbstractPhilosopher
 from ..enums import Side
 
 logger = logging.getLogger(__name__)

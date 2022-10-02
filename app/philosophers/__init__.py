@@ -1,5 +1,5 @@
 __all__ = [
-    "BasePhilosopher",
+    "AbstractPhilosopher",
     "Philosopher",
     "PhilosopherWithNumberedForks",
     "SmartPhilosopher",
@@ -7,7 +7,7 @@ __all__ = [
     "Philosopher",
 ]
 
-from .base import BasePhilosopher
+from .abstract import AbstractPhilosopher
 from .basic import Philosopher
 from .numbered import PhilosopherWithNumberedForks
 from .smart import SmartPhilosopher
