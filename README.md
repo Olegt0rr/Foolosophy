@@ -4,8 +4,23 @@ Solving [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philo
 
 ## How to launch
 
-There are no requirements.\
-Just run ```python3 -m app```
+There are no requirements.
+
+```python
+import logging
+
+# import required solution class and `start_dinner` executor
+from app import Table, start_dinner
+
+# setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+# pass chosen solution class to the executor
+start_dinner(Table)
+```
 
 ## Solutions
 
