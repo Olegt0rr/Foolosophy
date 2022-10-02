@@ -8,7 +8,7 @@ from ..enums import Side
 logger = logging.getLogger(__name__)
 
 
-class Philosopher(BasePhilosopher):
+class Philosopher(AbstractPhilosopher):
     """Represents thinker man."""
 
     def process(self) -> None:

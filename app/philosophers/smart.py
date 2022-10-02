@@ -2,13 +2,13 @@ import logging
 import random
 import time
 
-from .base import BasePhilosopher
+from .abstract import AbstractPhilosopher
 from ..enums import Side
 
 logger = logging.getLogger(__name__)
 
 
-class SmartPhilosopher(BasePhilosopher):
+class SmartPhilosopher(AbstractPhilosopher):
     """Represents smart thinker man."""
 
     def process(self) -> None:
