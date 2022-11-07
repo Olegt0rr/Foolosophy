@@ -1,6 +1,12 @@
 import logging
 
-from . import Table, start_dinner
+from . import start_dinner
+from .tables import (
+    Table,
+    TableWithNumberedForks,
+    TableWithSmartPhilosophers,
+    TableWithWaiter,
+)
 
 logging.basicConfig(
     level=logging.INFO,

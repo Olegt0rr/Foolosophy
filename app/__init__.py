@@ -1,9 +1,5 @@
 __all__ = [
     "start_dinner",
-    "Table",
-    "TableWithSmartPhilosophers",
-    "TableWithWaiter",
-    "TableWithNumberedForks",
 ]
 
 import signal
