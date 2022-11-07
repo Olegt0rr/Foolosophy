@@ -4,8 +4,7 @@ Solving [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philo
 
 ## How to launch
 
-Use python3.9
-There are no other requirements.
+Use `python3.9`. There are no other requirements.
 
 ```python
 import logging
