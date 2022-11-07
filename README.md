@@ -10,7 +10,8 @@ Use `python3.9`. There are no other requirements.
 import logging
 
 # import required solution class and `start_dinner` executor
-from app import Table, start_dinner
+from app import start_dinner
+from app.tables import Table
 
 # setup logging
 logging.basicConfig(
